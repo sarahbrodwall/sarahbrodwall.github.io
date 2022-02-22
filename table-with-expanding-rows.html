@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Table with expanding rows</title>
+    <title>Tabell med ekspanderende rad</title>
     <style>
 
         body {
@@ -65,15 +65,17 @@
 
 </head>
 <body>
+<h1>Hæsse funker tabellen?</h1>
+
 <table>
     <thead>
     <tr>
         <th></th>
-        <th>Name</th>
-        <th>Protocol</th>
-        <th>Port</th>
-        <th>Rule</th>
-        <th>Attached Groups</th>
+        <th>Navn</th>
+        <th>Favoritt dyr</th>
+        <th>Favoritt farge</th>
+        <th>Minst favoritt dyr</th>
+        <th>Minst favoritt farge</th>
         <th>Status</th>
     </tr>
     </thead>
@@ -91,17 +93,17 @@
                 </svg>
             </button>
         </td>
-        <td>Load Balancer 1</td>
-        <td>HTTP</td>
-        <td>3000</td>
-        <td>Round robin</td>
-        <td>Kevin’s VM Groups</td>
-        <td><span>Disabled</span></td>
+        <td>Ola Conny Brakkestad</td>
+        <td>Ku</td>
+        <td>Brun</td>
+        <td>Sel</td>
+        <td>Lyseblå</td>
+        <td><span>Inaktiv</span></td>
     </tr>
     <tr id="expandable-one" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
             <div class="expandable-row-content">
-                <p>Expandable row one content with a <a href="http://google.com">link</a>.</p>
+                <p>Her er litt innhold til rad 1 med en <a href="http://google.com">link</a>.</p>
             </div>
         </td>
     </tr>
@@ -118,18 +120,18 @@
                 </svg>
             </button>
         </td>
-        <td>Load Balancer 2</td>
-        <td>HTTP</td>
-        <td>80</td>
-        <td>DNS delegation</td>
-        <td>Andrew’s VM Groups</td>
-        <td><a href="http://google.com">Active</a></td>
+        <td>Henriette Kristensen</td>
+        <td>Bjørn</td>
+        <td>Hvit</td>
+        <td>Grevling</td>
+        <td>Transparent</td>
+        <td><a href="http://google.com">Hissig</a></td>
     </tr>
     <tr id="expandable-two" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
             <div class="expandable-row-content">
-                <p>Expandable row two content with a <a
-                        href="http://google.com">link</a>. I forhold til en betydelig avveining synliggjøres potensialet med sikte på satsingsområdet. Gitt en manglende avveining synliggjøres instrumentet på bakgrunn av forholdene. Under hensyntagen til en inkluderende avveining stimuleres resultatene med henblikk på løsningen. På grunn av en integrert organisasjon initieres kunnskapene eller sagt på en annen måte: evalueringen. Grunnet en gjeldende målsetting dokumenteres relasjonene hva angår egenarten.
+                <p>Her er litt innhold til rad 2 med en <a
+                        href="http://google.com">lenke</a>. I forhold til en betydelig avveining synliggjøres potensialet med sikte på satsingsområdet. Gitt en manglende avveining synliggjøres instrumentet på bakgrunn av forholdene. Under hensyntagen til en inkluderende avveining stimuleres resultatene med henblikk på løsningen. På grunn av en integrert organisasjon initieres kunnskapene eller sagt på en annen måte: evalueringen. Grunnet en gjeldende målsetting dokumenteres relasjonene hva angår egenarten.
                 </p>
             </div>
         </td>
@@ -147,17 +149,17 @@
                 </svg>
             </button>
         </td>
-        <td>Load Balancer 3</td>
-        <td>HTTP</td>
-        <td>3000</td>
-        <td>Round robin</td>
-        <td>Marc’s VM Groups</td>
-        <td><span>Disabled</span></td>
+        <td>Suki Clydesdale</td>
+        <td>Sel</td>
+        <td>Grønn</td>
+        <td>Serval</td>
+        <td>Rosa</td>
+        <td><span>Deaktivert</span></td>
     </tr>
     <tr id="expandable-three" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
             <div class="expandable-row-content">
-                <p>Expandable row three content with a <a href="http://google.com">link</a>.</p>
+                <p>Her er litt innhold til rad 3 med en <a href="http://google.com">link</a>.</p>
             </div>
         </td>
     </tr>
@@ -174,17 +176,17 @@
                 </svg>
             </button>
         </td>
-        <td>Load Balancer 4</td>
-        <td>HTTP</td>
-        <td>443</td>
-        <td>Round robin</td>
-        <td>Mel’s VM Groups</td>
-        <td><a href="http://google.com">Starting</a></td>
+        <td>Hans-Hermann Hoppe</td>
+        <td>Mudkip</td>
+        <td>Oransje</td>
+        <td>Skare</td>
+        <td>Hvit</td>
+        <td><a href="http://google.com">Starter</a></td>
     </tr>
     <tr id="expandable-four" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
             <div class="expandable-row-content">
-                <p>Expandable row four content</p>
+                <p>Her er litt innhold til rad 4 med en <a href="http://google.com">link</a>.</p>
             </div>
         </td>
     </tr>
@@ -201,17 +203,17 @@
                 </svg>
             </button>
         </td>
-        <td>Load Balancer 5</td>
-        <td>HTTP</td>
-        <td>80</td>
-        <td>DNS delegation</td>
-        <td>Ronja’s VM Groups</td>
-        <td><a href="http://google.com">Active</a></td>
+        <td>Max Kraft</td>
+        <td>Løve</td>
+        <td>Blå</td>
+        <td>Hund</td>
+        <td>Cyan</td>
+        <td><a href="http://google.com">Eksplodert</a></td>
     </tr>
     <tr id="expandable-five" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
             <div class="expandable-row-content">
-                <p>Expandable row five content with a <a href="http://google.com">link</a>.</p>
+                <p>Her er litt innhold til rad 5 med en <a href="http://google.com">link</a>.</p>
             </div>
         </td>
     </tr>
@@ -228,17 +230,17 @@
                 </svg>
             </button>
         </td>
-        <td>Load Balancer 6</td>
-        <td>HTTP</td>
-        <td>443</td>
-        <td>Round robin</td>
-        <td>Maureen’s VM Groups</td>
-        <td><a href="http://google.com">Starting</a></td>
+        <td>Pat Ole</td>
+        <td>Bjørnedyr</td>
+        <td>Gul</td>
+        <td>Meitemark</td>
+        <td>Svart</td>
+        <td><a href="http://google.com">Gunstig</a></td>
     </tr>
     <tr id="expandable-six" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
             <div class="expandable-row-content">
-                <p>Expandable row six content with a <a href="http://google.com">link</a>.</p>
+                <p>Her er litt innhold til rad 6 med en <a href="http://google.com">lenke</a>.</p>
             </div>
         </td>
     </tr>
