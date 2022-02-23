@@ -9,35 +9,17 @@
             font-family: "Source Sans Pro", sans-serif;
         }
 
+        table {
+            width: 100%;
+        }
+
         thead tr {
             background-color: #000;
             color: #fff;
         }
 
-        tbody tr {
-            border-bottom: 1px solid black;
-        }
-
-        tr.js-expandable-row[aria-hidden="true"] {
-            border-bottom: 0;
-        }
-
-        tr.js-expandable-row[aria-hidden="true"] td {
-            border-bottom: 0;
-            padding: 0;
-        }
-
-        tr.js-expandable-row .expandable-row-content {
-            max-height: 1000px;
-            opacity: 1;
-            transition: max-height 1s ease-in-out, opacity .5s ease-in-out;
-        }
-
-        tr.js-expandable-row[aria-hidden="true"] .expandable-row-content {
-            overflow: hidden;
-            max-height: 0;
-            opacity: 0;
-            transition: all .5s cubic-bezier(0, 1, 0, 1);
+        .hidden {
+            display: none;
         }
 
         .js-expander {
@@ -102,8 +84,8 @@
     </tr>
     <tr id="expandable-one" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
-            <div class="expandable-row-content">
-                <p>Her er litt innhold til rad 1 med en <a href="http://google.com">link</a>.</p>
+            <div class="js-expandable-row-content hidden">
+                <p>Ola Conny Brakkestad sier "hei". Her er litt innhold med en <a href="http://google.com">link</a>.</p>
             </div>
         </td>
     </tr>
@@ -129,8 +111,8 @@
     </tr>
     <tr id="expandable-two" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
-            <div class="expandable-row-content">
-                <p>Her er litt innhold til rad 2 med en <a
+            <div class="js-expandable-row-content hidden">
+                <p>Henriette Kristensen sier "hei". Her er litt innhold med en <a
                         href="http://google.com">lenke</a>. I forhold til en betydelig avveining synliggjøres potensialet med sikte på satsingsområdet. Gitt en manglende avveining synliggjøres instrumentet på bakgrunn av forholdene. Under hensyntagen til en inkluderende avveining stimuleres resultatene med henblikk på løsningen. På grunn av en integrert organisasjon initieres kunnskapene eller sagt på en annen måte: evalueringen. Grunnet en gjeldende målsetting dokumenteres relasjonene hva angår egenarten.
                 </p>
             </div>
@@ -158,8 +140,8 @@
     </tr>
     <tr id="expandable-three" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
-            <div class="expandable-row-content">
-                <p>Her er litt innhold til rad 3 med en <a href="http://google.com">link</a>.</p>
+            <div class="js-expandable-row-content hidden">
+                <p>Suki Clydesdale sier "hei". Her er litt innhold med en <a href="http://google.com">link</a>.</p>
             </div>
         </td>
     </tr>
@@ -185,8 +167,8 @@
     </tr>
     <tr id="expandable-four" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
-            <div class="expandable-row-content">
-                <p>Her er litt innhold til rad 4 med en <a href="http://google.com">link</a>.</p>
+            <div class="js-expandable-row-content hidden">
+                <p>Hans-Hermann Hoppe sier "hei". Her er litt innhold med en <a href="http://google.com">link</a>.</p>
             </div>
         </td>
     </tr>
@@ -212,8 +194,8 @@
     </tr>
     <tr id="expandable-five" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
-            <div class="expandable-row-content">
-                <p>Her er litt innhold til rad 5 med en <a href="http://google.com">link</a>.</p>
+            <div class="js-expandable-row-content hidden">
+                <p>Max Kraft sier "hei". Her er litt innhold med en <a href="http://google.com">link</a>.</p>
             </div>
         </td>
     </tr>
@@ -239,8 +221,8 @@
     </tr>
     <tr id="expandable-six" class="js-expandable-row" aria-hidden="true">
         <td colspan="7">
-            <div class="expandable-row-content">
-                <p>Her er litt innhold til rad 6 med en <a href="http://google.com">lenke</a>.</p>
+            <div class="js-expandable-row-content hidden">
+                <p>Pat Ole sier "hei". Her er litt innhold med en <a href="http://google.com">lenke</a>.</p>
             </div>
         </td>
     </tr>
@@ -257,6 +239,7 @@
 
             let expandableRowID = this.getAttribute("aria-controls"),
                 expandableRow = document.getElementById(expandableRowID),
+                expandableRowContent = expandableRow.querySelector(".js-expandable-row-content"),
                 rowIsExpanded = expander.getAttribute("aria-expanded") === "true";
 
             if (rowIsExpanded) {
@@ -264,12 +247,15 @@
                 expandableRow.setAttribute("aria-hidden", "true")
                 expander.setAttribute("aria-expanded", "false")
                 expander.setAttribute("aria-label", "Vis mer")
+                expandableRowContent.classList.add("hidden");
 
             } else {
 
                 expandableRow.setAttribute("aria-hidden", "false")
                 expander.setAttribute("aria-expanded", "true")
                 expander.setAttribute("aria-label", "Skjul rad")
+                expandableRowContent.classList.remove("hidden")
+
             }
 
 
