@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Landmarks</title>
+    <style>
+        .breadcrumbs {
+            list-style: none;
+            padding: 0;
+        }
+
+        .breadcrumbs li {
+            display: inline-block;
+        }
+
+        .breadcrumbs li:not(:last-child)::after {
+            content: "  >";
+        }
+    </style>
+</head>
+<body>
+<nav aria-label="Du er her: ">
+    <ul class="breadcrumbs">
+        <li><a href="/">Forsiden</a></li>
+        <li><a href="index.html">ARIA-eksempler</a></li>
+        <li aria-current="page">Landmarks</li>
+    </ul>
+</nav>
+
+<aside aria-labelledby="links-heading">
+    <h3 id="links-heading">Nyttige lenker</h3>
+    <ul>
+        <li><a href="http://aksel.nav.no">Aksel, NAVs produktutvikling-kokebok</a></li>
+        <li><a href="https://navikt.github.io/uu/">Om universell utforming i NAV</a></li>
+        <li><a href="http://mangfoldimai.no">Mangfold i mai</a></li>
+    </ul>
+</aside>
+
+
+
+</body>
+</html>
