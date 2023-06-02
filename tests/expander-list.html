@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card expander test/Skjemaoversikt structure</title>
+    <style>
+
+        .expander {
+            background: pink;
+            cursor: pointer;
+        }
+
+        .expandable-section {
+            background: lightblue;
+            margin: 1em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<h1>Søknad og skjema</h1>
+
+<fieldset>
+    <legend>Velg område</legend>
+</fieldset>
+
+
+<fieldset>
+    <legend>Velg type</legend>
+</fieldset>
+
+<fieldset>
+    <legend>Velg tjeneste</legend>
+</fieldset>
+
+
+<p role="status">Viser X av Y</p>
+
+<ul>
+    <li class="expandable-section">
+
+        <div class="expander">
+            <h2>
+                <span role="button" tabindex="0" aria-expanded="false">Ansiktsprotese</span>
+            </h2>
+            <span>Pengestøtte, Pensjon</span>
+        </div>
+
+        <div class="expandable-content hidden">
+            <h3>Søknad om alderspensjon og AFP i privat sektor</h3>
+
+            [...]
+
+            <p>Mer om <a href="http://nav.no">Alderspensjon.</a></p>
+        </div>
+
+    </li>
+
+    <li class="expandable-section">
+
+        <div class="expander">
+            <h2>
+                <span role="button" aria-expanded="false" tabindex="0">Alderspensjon</span>
+            </h2>
+            <span>Pengestøtte, Hjelpemiddel, Hjelpemidler og tilrettelegging</span>
+        </div>
+
+        <div class="expandable-content hidden">
+            <h3>Søk om stønad til protese</h3>
+
+            [...]
+
+            <p>Mer om <a href="http://nav.no">Ansiktsprotese.</a></p>
+        </div>
+
+    </li>
+
+</ul>
+
+<script>
+
+    const expandableSections = document.querySelectorAll('.expandable-section');
+    Array.prototype.forEach.call(expandableSections, expandableSection => {
+        let down, up,
+            button = expandableSection.querySelector('h2 [role="button"]'),
+            expander = expandableSection.querySelector('.expander'),
+            expandableContent = expandableSection.querySelector('.expandable-content');
+
+        expander.onmousedown = () => down = +new Date();
+        expander.onmouseup = () => {
+            up = +new Date();
+            if ((up - down) < 200) {
+                console.log("click");
+                button.setAttribute(
+                    'aria-expanded',
+                    button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+                );
+
+                expandableContent.classList.toggle("hidden");
+
+            }
+        }
+    });
+
+</script>
+
+
+</body>
+</html>
